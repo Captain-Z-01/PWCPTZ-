@@ -1,7 +1,7 @@
 (function(){
   var grid=document.getElementById('projectGrid');
   if(!grid)return;
-  fetch('src/project.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('project.json HTTP '+r.status);return r.json();}).then(function(projects){
+  fetch('/src/project.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('project.json HTTP '+r.status);return r.json();}).then(function(projects){
     if(!Array.isArray(projects))throw new Error('project.json must contain an array');
     if(!projects.length){grid.innerHTML='<div class="loading-copy">Belum ada project yang tersedia.</div>';return;}
     grid.innerHTML='';
