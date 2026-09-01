@@ -1,5 +1,5 @@
 (function(){
-  var root=document.documentElement, key='Captain_Z-MD-theme', btn=document.getElementById('themeToggle');
+  var root=document.documentElement, key='Captain_Z-MD.theme', btn=document.getElementById('themeToggle');
   function apply(theme){root.setAttribute('data-theme',theme);localStorage.setItem(key,theme);if(btn){btn.setAttribute('aria-pressed',String(theme==='dark'));btn.setAttribute('aria-label',theme==='dark'?'Gunakan light mode':'Gunakan dark mode');var sun=btn.querySelector('.icon-sun'),moon=btn.querySelector('.icon-moon');if(sun)sun.style.display=theme==='dark'?'none':'inline';if(moon)moon.style.display=theme==='dark'?'inline':'none';}}
   if(btn){apply(root.getAttribute('data-theme')||'light');btn.addEventListener('click',function(){apply(root.getAttribute('data-theme')==='dark'?'light':'dark');});}
   document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new Date().getFullYear();});
