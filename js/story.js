@@ -15,19 +15,23 @@
 
     grid.innerHTML='';
 
-    stories.forEach(function(item,index){
+    var orderedStories=stories.slice().reverse();
+
+    orderedStories.forEach(function(item){
+      var originalIndex=stories.indexOf(item);
+
       if(!item.deskripsi)return;
 
       var card=document.createElement('article');
       card.className='story-card reveal';
 
-      if(item.preview){
+      if(item.preview&&item.preview.trim()){
         var preview=document.createElement('div');
         preview.className='story-preview';
 
         var img=document.createElement('img');
         img.src=item.preview;
-        img.alt=item.judul||'Story '+String(index+1).padStart(2,'0');
+        img.alt=item.judul&&item.judul.trim()?item.judul:'Story '+String(originalIndex+1).padStart(2,'0');
         img.loading='eager';
 
         img.onerror=function(){
@@ -43,7 +47,7 @@
       top.className='story-card-top';
 
       var number=document.createElement('span');
-      number.textContent='STORY '+String(index+1).padStart(2,'0');
+      number.textContent='STORY '+String(originalIndex+1).padStart(2,'0');
 
       var status=document.createElement('span');
       status.textContent='LOGBOOK';
@@ -72,7 +76,7 @@
 
       var idx=document.createElement('span');
       idx.className='story-index';
-      idx.textContent='CZ / '+String(index+1).padStart(3,'0');
+      idx.textContent='CZ / '+String(originalIndex+1).padStart(3,'0');
 
       foot.appendChild(idx);
 
@@ -82,7 +86,7 @@
         a.href=item.link;
         a.target='_blank';
         a.rel='noopener noreferrer';
-        a.textContent='Read Story →';
+        a.textContent=(item.namabtn&&item.namabtn.trim()?item.namabtn:'Read Story')+' →';
         foot.appendChild(a);
       }
 
