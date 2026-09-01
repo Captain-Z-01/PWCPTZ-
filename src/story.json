@@ -1,0 +1,20 @@
+[
+  {
+    "judul": "Hari Pertama",
+    "deskripsi": "Hari ini aku mulai membangun sesuatu yang baru. Sebuah ide sederhana perlahan berubah menjadi bagian dari perjalanan Captain Z.",
+    "preview": "/image/story/hari-pertama.jpg",
+    "link": ""
+  },
+  {
+    "judul": "",
+    "deskripsi": "Hari ini menjadi salah satu catatan kecil dalam perjalanan. Tidak semuanya harus besar untuk menjadi sesuatu yang berarti.",
+    "preview": "/image/story/hari-kedua.jpg",
+    "link": ""
+  },
+  {
+    "judul": "A New Route",
+    "deskripsi": "Satu perjalanan selesai, dan rute berikutnya mulai ditentukan.",
+    "preview": "/image/story/rute-baru.jpg",
+    "link": "https://contoh.pages.dev/"
+  }
+]
